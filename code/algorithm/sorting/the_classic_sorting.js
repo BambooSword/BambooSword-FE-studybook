@@ -4,7 +4,7 @@ function getRandomArr() {
   for (let i = 0; i < Math.floor(Math.random() * 15) + 5; i++) {
     res.push(Math.floor(Math.random() * 10) + 1)
   }
-	return res;
+  return res
 }
 
 function swapArr(arr, a, b) {
@@ -27,7 +27,7 @@ function selectionSort(arr) {
   }
   return arr
 }
-const selectionArr = getRandomArr();
+const selectionArr = getRandomArr()
 console.log('before selection ', selectionArr)
 selectionSort(selectionArr)
 console.log('after selection sort ===>', selectionArr)
@@ -35,7 +35,7 @@ console.log('after selection sort ===>', selectionArr)
 // 2. 插入排序
 function insertionSort(arr) {
   const len = arr.length
-  let sortInd; // 当前要插入到有序数列中的index
+  let sortInd // 当前要插入到有序数列中的index
   // 有序数列 0 ~ i-1;
   // 无序数列 i ~ len
 
@@ -52,114 +52,116 @@ function insertionSort(arr) {
   }
   return arr
 }
-const insertionArr = getRandomArr();
-console.log('before insertion ',insertionArr)
+const insertionArr = getRandomArr()
+console.log('before insertion ', insertionArr)
 insertionSort(insertionArr)
 console.log('after insertion sort ===>', insertionArr)
 
 // 3. 冒泡排序
 
 function bubbleSort(arr) {
-	const len = arr.length;
-	for (let i = 0; i < len; i++) {
-		for (let j = 0; j < len-i-1; j++) { // 注意j的终止条件是len - i - 1, 因为我们采用的策略是和下一个元素比较
-			if(arr[j] > arr[j+1]) {
-				swapArr(arr, j, j+1);
-			}
-		}
-	}
-	return arr;
+  const len = arr.length
+  for (let i = 0; i < len; i++) {
+    for (let j = 0; j < len - i - 1; j++) {
+      // 注意j的终止条件是len - i - 1, 因为我们采用的策略是和下一个元素比较
+      if (arr[j] > arr[j + 1]) {
+        swapArr(arr, j, j + 1)
+      }
+    }
+  }
+  return arr
 }
 
-const bubbleArr = getRandomArr();
-console.log('before bubble sort',bubbleArr);
+const bubbleArr = getRandomArr()
+console.log('before bubble sort', bubbleArr)
 insertionSort(bubbleArr)
 console.log('after bubble sort', bubbleArr)
 // 4. 希尔排序
 function shellSort(arr) {
-	const len = arr.length;
-	let gap = len;
-	while(gap > 1) {
-		gap  = Math.floor(gap/2);
-		for (let i = gap; i < len; i++) {
-			for (let j = i -gap; j >= 0; j -= gap) { // 插入排序
-				if (arr[j] > arr[j+gap]) {
-					swapArr(arr, j, j+gap);
-				}
-			}
-		}
-	}
+  const len = arr.length
+  let gap = len
+  while (gap > 1) {
+    gap = Math.floor(gap / 2)
+    for (let i = gap; i < len; i++) {
+      for (let j = i - gap; j >= 0; j -= gap) {
+        // 插入排序
+        if (arr[j] > arr[j + gap]) {
+          swapArr(arr, j, j + gap)
+        }
+      }
+    }
+  }
 }
 
-const shellArr = getRandomArr();
-console.log('before shell sort ===>', shellArr);
+const shellArr = getRandomArr()
+console.log('before shell sort ===>', shellArr)
 shellSort(shellArr)
-console.log('after shell sort ===>',shellArr);
+console.log('after shell sort ===>', shellArr)
 // 5. 归并排序
 
 function mergeSort(arr) {
-	const len = arr.length;
-	if(len < 2) return arr;
-	const middle = Math.floor(len/2);
-	const left = arr.slice(0, middle);
-	const right = arr.slice(middle);
-	return merge(mergeSort(left), mergeSort(right));
+  const len = arr.length
+  if (len < 2) return arr
+  const middle = Math.floor(len / 2)
+  const left = arr.slice(0, middle)
+  const right = arr.slice(middle)
+  return merge(mergeSort(left), mergeSort(right))
 }
 function merge(left, right) {
-	const result = [];
-	while(left.length && right.length) {
-		if(left[0] <= right[0]) {
-			result.push(left.shift());
-		}else {
-			result.push(right.shift());
-		}
-	}
-	if(left.length) {
-		result.push(...left);
-	}
-	if(right.length) {
-		result.push(...right);
-	}
-	return result;
+  const result = []
+  while (left.length && right.length) {
+    if (left[0] <= right[0]) {
+      result.push(left.shift())
+    } else {
+      result.push(right.shift())
+    }
+  }
+  if (left.length) {
+    result.push(...left)
+  }
+  if (right.length) {
+    result.push(...right)
+  }
+  return result
 }
-const mergeArr = getRandomArr();
-console.log('before merge sort ===>', mergeArr);
-const mergedArr = mergeSort(mergeArr);
+const mergeArr = getRandomArr()
+console.log('before merge sort ===>', mergeArr)
+const mergedArr = mergeSort(mergeArr)
 console.log('after merge sort ===>', mergedArr)
 // 6. 快速排序
 function quickSort(arr, left, right) {
-	let partitionIndex;
-	if(left < right) {
-		partitionIndex = partition(arr, left, right);
-		quickSort(arr, left, partitionIndex -1);
-		quickSort(arr, partitionIndex + 1, right);
-	}
-	return arr;
+  let partitionIndex
+  if (left < right) {
+    partitionIndex = partition(arr, left, right)
+    quickSort(arr, left, partitionIndex - 1)
+    quickSort(arr, partitionIndex + 1, right)
+  }
+  return arr
 }
 function partition(arr, left, right) {
-	let pivot = left;
-	let index = pivot +1;
-	for (let i = index; i <= right; i++) { // 比pivot小的值都依次和前面的值进行交换，确保最后pivot左边的都小于 arr[pivot]
-		if(arr[i] < arr[pivot]) {
-			swapArr(arr, i, index);
-			index++;
-		}
-	}
-	swapArr(arr, pivot, index-1);// 把pivot和最后一个比它小的值进行交换，完成 partition 过程；
-	return index -1;
+  let pivot = left
+  let index = pivot + 1
+  for (let i = index; i <= right; i++) {
+    // 比pivot小的值都依次和前面的值进行交换，确保最后pivot左边的都小于 arr[pivot]
+    if (arr[i] < arr[pivot]) {
+      swapArr(arr, i, index)
+      index++
+    }
+  }
+  swapArr(arr, pivot, index - 1) // 把pivot和最后一个比它小的值进行交换，完成 partition 过程；
+  return index - 1
 }
 
-const quickArr = getRandomArr();
+const quickArr = getRandomArr()
 console.log('before quick sort ==>', quickArr)
-quickSort(quickArr, 0, quickArr.length-1)
+quickSort(quickArr, 0, quickArr.length - 1)
 console.log('after quick sort ===>', quickArr)
-
 
 // 7. 堆排序
 class Heap {
   constructor(data) {
     this.data = data
-    this.compartor = (a, b) => a - b
+    this.comparator = (a, b) => a - b
     this.heapify()
   }
 
@@ -214,11 +216,11 @@ class Heap {
     while (index) {
       // 获取到当前节点的⽗节点，
       const parenIndex = (index - 1) >> 1
-
       // const parenIndex = Math.floor((index - 1) / 2);
       // const parenIndex = (index - 1) / 2 | 0;
+
       // ⽐较⽗节点的值和我们当前的值哪个⼩。
-      if (this.compartor(this.data[index], this.data[parenIndex]) < 0) {
+      if (this.comparator(this.data[index], this.data[parenIndex]) < 0) {
         //if 交换⽗节点和⼦节点
         this.swap(index, parenIndex)
         // index 向上⾛⼀步，进⾏下⼀次交换
@@ -242,14 +244,14 @@ class Heap {
       let findIndex = index
       if (
         leftIndex <= lastIndex &&
-        this.compartor(this.data[leftIndex], this.data[findIndex]) < 0
+        this.comparator(this.data[leftIndex], this.data[findIndex]) < 0
       ) {
         findIndex = leftIndex
       }
 
       if (
         rightIndex <= lastIndex &&
-        this.compartor(this.data[rightIndex], this.data[findIndex]) < 0
+        this.comparator(this.data[rightIndex], this.data[findIndex]) < 0
       ) {
         findIndex = rightIndex
       }
@@ -264,19 +266,77 @@ class Heap {
   }
 }
 
-
-const heapArr = getRandomArr();
-console.log('before heapArr ===>', heapArr);
-const len = heapArr.length;
+const heapArr = getRandomArr()
+console.log('before heapArr ===>', heapArr)
+const len = heapArr.length
 const minHeap = new Heap(heapArr)
 const resHeapArr = []
 for (let i = 0; i < len; i++) {
-	resHeapArr.push(minHeap.poll())
+  resHeapArr.push(minHeap.poll())
 }
 console.log('after heapArr ===>', resHeapArr)
 
 // 8. 计数排序
 
+// 简单实现版本
+function countSort(arr) {
+  const counts = []
+  for (let i = 0; i < arr.length; i++) {
+    if (!counts[arr[i]]) {
+      counts[arr[i]] = 1
+      continue
+    }
+    counts[arr[i]]++
+  }
+  let index = 0 // 数组中的位置
+  for (let j = 0; j < counts.length; j++) {
+    while (counts[j] && counts[j]--) {
+      arr[index++] = j
+    }
+  }
+  return arr
+}
+const countArr = getRandomArr()
+console.log('before count sorting ===>', countArr)
+countSort(countArr)
+console.log('after count sorting ===>', countArr)
+
+// 改进版
+function countSort2(arr) {
+  let min = arr[0],
+    max = arr[0]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) max = arr[i]
+    if (arr[i] < min) min = arr[i]
+  }
+  const counts = new Array(max - min + 1).fill(0);
+  // 和简单版一样，找出对应元素的次数
+  for (let i = 0; i < arr.length; i++) {
+    counts[arr[i] - min]++
+  }
+  // 累加次数，让元素的个数为叠加式
+  for (let i = 1; i < counts.length; i++) {
+      counts[i] += counts[i - 1]
+  }
+
+  // 从后往前遍历元素，把它放到有序数组中的合适位置
+  const sortedArr = []
+  for (let i = arr.length - 1; i >= 0; i--) {
+    // -- 放前面 是模拟 counts[k-min]-p，且同时把 对应 counts中的记数次数-1；这样方便遇到后面相同的元素执行操作相同
+    sortedArr[--counts[arr[i] - min]] = arr[i]
+  }
+
+  // 将有序数组值赋值到arr, 可做可不做，具体看是要改变arr还是不改变arr返回新数组
+  console.log('this is sorted Arr', sortedArr)
+  for (let i = 0; i < sortedArr.length; i++) {
+    arr[i] = sortedArr[i]
+  }
+  return sortedArr
+}
+const countArr2 = getRandomArr()
+console.log('before count sorting 2 ===>', countArr2)
+countSort2(countArr2)
+console.log('after count sorting 2 ===>', countArr2)
 // 9. 桶排序
 
 // 10.基数排序
