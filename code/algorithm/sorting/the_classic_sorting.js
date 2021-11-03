@@ -309,14 +309,14 @@ function countSort2(arr) {
     if (arr[i] > max) max = arr[i]
     if (arr[i] < min) min = arr[i]
   }
-  const counts = new Array(max - min + 1).fill(0);
+  const counts = new Array(max - min + 1).fill(0)
   // 和简单版一样，找出对应元素的次数
   for (let i = 0; i < arr.length; i++) {
     counts[arr[i] - min]++
   }
   // 累加次数，让元素的个数为叠加式
   for (let i = 1; i < counts.length; i++) {
-      counts[i] += counts[i - 1]
+    counts[i] += counts[i - 1]
   }
 
   // 从后往前遍历元素，把它放到有序数组中的合适位置
@@ -337,6 +337,109 @@ const countArr2 = getRandomArr()
 console.log('before count sorting 2 ===>', countArr2)
 countSort2(countArr2)
 console.log('after count sorting 2 ===>', countArr2)
-// 9. 桶排序
+// 9. 桶排序(bucketSort)
+function bucketSort(arr, size) {
+  if (arr.length === 0) {
+    return arr
+  }
 
-// 10.基数排序
+  let minValue = arr[0]
+  let maxValue = arr[0]
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < minValue) {
+      minValue = arr[i] // 输入数据的最小值
+    }
+    if (arr[i] > maxValue) {
+      maxValue = arr[i] // 输入数据的最大值
+    }
+  }
+
+  //桶的初始化
+  let DEFAULT_BUCKET_SIZE = 5 // 设置桶的默认数量为5
+  const bucketSize = size || DEFAULT_BUCKET_SIZE
+  let bucketCount = Math.floor((maxValue - minValue) / bucketSize) + 1
+  let buckets = new Array(bucketCount)
+  for (let i = 0; i < buckets.length; i++) {
+    buckets[i] = []
+  }
+
+  //利用映射函数将数据分配到各个桶中
+  for (let i = 0; i < arr.length; i++) {
+    buckets[Math.floor((arr[i] - minValue) / bucketSize)].push(arr[i])
+  }
+
+  arr.length = 0
+  for (let i = 0; i < buckets.length; i++) {
+    insertionSort(buckets[i]) // 对每个桶进行排序，这里使用了插入排序
+    for (let j = 0; j < buckets[i].length; j++) {
+      arr.push(buckets[i][j])
+    }
+  }
+
+  return arr
+}
+const bucketArr = getRandomArr()
+console.log('before bucket sorting ===>', bucketArr)
+bucketSort(bucketArr)
+console.log('after bucket sorting ===>', bucketArr)
+// 10.基数排序（Radix Sort）
+// 实现方式一：利用不断对基数进行计数排序
+function radixSort(arr) {
+  let max = arr[0]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) max = arr[i]
+  }
+  for (let i = 1; i < max; i *= 10) {
+    countingSort(arr, i)
+  }
+  function countingSort(arr, divider) {
+    const counts = new Array(10).fill(0)
+    for (let i = 0; i < arr.length; i++) {
+      counts[Math.floor(arr[i] / divider) % 10]++
+    }
+    for (let j = 1; j < counts.length; j++) {
+      counts[j] += counts[j - 1]
+    }
+    const res = []
+    for (let k = arr.length - 1; k >= 0; k--) {
+      res[--counts[Math.floor(arr[k] / divider) % 10]] = arr[k]
+    }
+    for (let i = 0; i < res.length; i++) {
+      arr[i] = res[i]
+    }
+  }
+}
+
+// const radixArr = getRandomArr();
+const radixArr = [999999, 888888, 7, 9, 323, 454, 33333, 1, 2]
+console.log('before radix sorting ===>', radixArr)
+radixSort(radixArr)
+console.log('after radix sorting ===>', radixArr)
+
+// 实现方式二：二维数组保存数据
+function radixSort2(arr) {
+  let max = arr[0]
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) max = arr[i]
+  }
+  const counter = [] //存放排好基数位置的二维数组
+  for (let i = 1; i < max; i *= 10) {
+    let index = 0
+    // 进行基数位排序
+    for (let j = 0; j < arr.length; j++) {
+      const radix = Math.floor(arr[j] / i) % 10
+      if (!counter[radix]) counter[radix] = []
+      counter[radix].push(arr[j])
+    }
+    // 对arr进行重新赋值
+    for (let k = 0; k < counter.length; k++) {
+      while (counter[k] && counter[k].length > 0) {
+        arr[index++] = counter[k].shift()
+      }
+    }
+  }
+}
+const radixArr2 = [999999, 888888, 7, 9, 323, 454, 33333, 1, 2]
+console.log('before radix2 sorting ===>', radixArr2)
+radixSort2(radixArr2)
+console.log('after radix2 sorting ===>', radixArr2)
