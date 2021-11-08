@@ -53,3 +53,5 @@ const a2 = [2, 3, 4]
 const sortedListRes = getSortedList(generateList(a1), generateList(a2))
 
 console.log(sortedListRes);
+
+

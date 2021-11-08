@@ -10,7 +10,7 @@
   
     - [掘金文章：算法学习04](https://juejin.cn/post/7026389580177735716)
     - [code](code/algorithm/sorting/the_classic_sorting.js)
-    - [掘金文章：前端红宝书学习3](https://juejin.cn/post/7026389412791451679)
+    - [掘金文章：前端红宝书学习3](https://juejin.cn/post/7026389412791451679d)
   - 2021.11.02
   
     - [掘金文章：算法学习03](https://juejin.cn/post/7026017494674440222)

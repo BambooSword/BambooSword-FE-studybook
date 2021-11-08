@@ -389,7 +389,7 @@ function radixSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > max) max = arr[i]
   }
-  for (let i = 1; i < max; i *= 10) {
+  for (let i = 1; i <= max; i *= 10) {
     countingSort(arr, i)
   }
   function countingSort(arr, divider) {
@@ -411,7 +411,7 @@ function radixSort(arr) {
 }
 
 // const radixArr = getRandomArr();
-const radixArr = [999999, 888888, 7, 9, 323, 454, 33333, 1, 2]
+const radixArr = [999999, 888888, 7, 9, 323, 454, 33333, 1, 2, 10000000]
 console.log('before radix sorting ===>', radixArr)
 radixSort(radixArr)
 console.log('after radix sorting ===>', radixArr)
