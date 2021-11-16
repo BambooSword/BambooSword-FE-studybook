@@ -5,6 +5,9 @@
 ## 日志
 
 - 学习内容
+  - 2021.11.16
+    - [掘金文章：每日一题leetcode](https://juejin.cn/post/7031173560118968356)
+    - [B站视频：每日一题leetcode](https://www.bilibili.com/video/BV1hS4y197Tv/)
   - 2021.11.15
     - [掘金文章：每日一题leetcode](https://juejin.cn/post/7030782421230911495)
   - 2021.11.14
