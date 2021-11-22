@@ -5,6 +5,9 @@
 ## 日志
 
 - 学习内容
+  - 2021.11.22
+    - [掘金文章：每日一题leetcode: 两两交换链表中的节点](https://juejin.cn/post/7033305212420882462)
+    - [B站视频：每日一题leetcode: 快速排序 quick sort](https://www.bilibili.com/video/BV1wU4y1u7s1/)
   - 2021.11.19
     - [掘金文章：每日一题leetcode](https://juejin.cn/post/7032249464655970312)
     - [B站视频：每日一题leetcode](https://www.bilibili.com/video/BV1qF411h7yg/)
