@@ -5,6 +5,9 @@
 ## 日志
 
 - 学习内容
+  - 2021.11.27
+    - [掘金文章：基本计算器II](https://juejin.cn/post/7035166468253843487)
+    - [B站视频：](https://www.bilibili.com/video/BV1AR4y147nB/)
   - 2021.11.25
     - [掘金文章：一个由JSON.parse()报错引发的思考](https://juejin.cn/post/7034450796020252685)
     - [掘金文章：每日一题：验证二叉树的前序序列化](https://juejin.cn/post/7034692095847858189)
