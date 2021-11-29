@@ -5,6 +5,9 @@
 ## 日志
 
 - 学习内容
+  - 2021.11.29
+    - [掘金文章：函数的独占时间](https://juejin.cn/post/7035997035815764004)
+    - [掘金文章：表现良好的最长时间段](https://juejin.cn/post/7035998682352877605)
   - 2021.11.27
     - [掘金文章：基本计算器II](https://juejin.cn/post/7035166468253843487)
     - [B站视频：](https://www.bilibili.com/video/BV1AR4y147nB/)
