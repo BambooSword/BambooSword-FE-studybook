@@ -5,6 +5,8 @@
 ## 日志
 
 - 学习内容
+  - 2021.12.02
+    - [B站视频：链表相交](https://www.bilibili.com/video/BV1Mf4y1T7s1/)
   - 2021.12.01
     - [掘金文章：任务调度器](https://juejin.cn/post/7036644495756099614)
     - [掘金文章：煎饼排序](https://juejin.cn/post/7036635089467342884)
