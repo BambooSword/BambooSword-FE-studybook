@@ -5,6 +5,15 @@
 ## 日志
 
 - 学习内容
+  - 2021.12.07
+    - [B站视频：数据流中的第K大元素](https://www.bilibili.com/video/BV1yR4y1s7Cy/)
+  - 2021.12.04
+    - [掘金文章：验证栈序列](https://juejin.cn/post/7037407694625439775)
+    - [掘金文章：删除最外层括号](https://juejin.cn/post/7037407338361258015)
+  - 2021.12.03
+    - [掘金文章：比较含退格的字符串](https://juejin.cn/post/7037010976599703583)
+    - [掘金文章：棒球比赛](https://juejin.cn/post/7037009163636965406)
+    - [掘金文章：化栈为队](https://juejin.cn/post/7037008586181967879)
   - 2021.12.02
     - [B站视频：链表相交](https://www.bilibili.com/video/BV1Mf4y1T7s1/)
   - 2021.12.01
