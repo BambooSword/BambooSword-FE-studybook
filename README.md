@@ -5,6 +5,9 @@
 ## 日志
 
 - 学习内容
+  - 2021.12.09
+    - [B站视频：旋转链表](https://www.bilibili.com/video/BV1o44y1h7uu/)
+    - [掘金文章：环路检测](https://juejin.cn/post/7039600262813597727)
   - 2021.12.07
     - [B站视频：数据流中的第K大元素](https://www.bilibili.com/video/BV1yR4y1s7Cy/)
   - 2021.12.04
