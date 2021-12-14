@@ -1,0 +1,49 @@
+{
+  "name": "bamboosword-fe-studybook",
+  "version": "1.0.0",
+  "description": "> 学习打卡记录",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"hello world\"",
+    "dev:comment": "启动开发环境",
+    "dev": "ts-node-dev --respawn --transpile-only code/index.ts",
+    "eslint:comment": "使用 ESLint 检查并自动修复 code 目录下所有扩展名为 .ts 的文件",
+    "eslint": "eslint --fix code --ext .ts --max-warnings=0",
+    "prettier:comment": "自动格式化 code 目录下的所有 .ts 文件",
+    "prettier": "prettier --write \"code/**/*.ts\"",
+    "commit:comment": "引导设置规范化的提交信息",
+    "commit": "cz",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BambooSword/BambooSword-FE-studybook.git"
+  },
+  "author": "BambooSword",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BambooSword/BambooSword-FE-studybook/issues"
+  },
+  "homepage": "https://github.com/BambooSword/BambooSword-FE-studybook#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@types/node": "^16.11.12",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.4.1",
+    "prettier": "^2.5.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.2.4",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1",
+    "husky": "^7.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
