@@ -1,5 +1,6 @@
-var net = require('net');
-var server = net.createServer((connection) => {
+// const net = require('net');
+import net from 'net';
+const server = net.createServer((connection) => {
   console.log('client connected');
   connection.on('data', (data) => {
     console.log('Server接收: ' + data.toString());

@@ -1,5 +1,6 @@
-var net = require('net');
-var client = net.connect(3000, () => {
+import net from 'net';
+
+const client = net.connect('3000', () => {
   console.log('连接到服务器！');
 });
 
@@ -9,7 +10,10 @@ const interval = setInterval(() => {
   console.log('客户端发送: ' + msg);
   client.write(msg);
   if (n-- === 0) {
-    client.end();
+    client.end(() => {
+      console.log('this is end');
+      client.emit('end');
+    });
     clearInterval(interval);
   }
 }, 500);
