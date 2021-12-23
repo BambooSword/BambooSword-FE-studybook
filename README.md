@@ -5,6 +5,9 @@
 ## 日志
 
 - 学习内容
+  - 2021.12.23
+    - [B站视频：罗马数字转整数](https://www.bilibili.com/video/BV1Ea41167iL/)  
+    - [B站视频：插入搜索位置](https://www.bilibili.com/video/BV1744y177Ek/)  
   - 2021.12.21
     - [掘金文章：移除石子的最大得分](https://juejin.cn/post/7044135057178492958/)  
     - [掘金文章：超级丑数](https://juejin.cn/post/7044132983220994079)  
