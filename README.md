@@ -5,6 +5,12 @@
 ## 日志
 
 - 学习内容
+  - 2021.12.21
+    - [掘金文章：对称二叉树](https://juejin.cn/post/7045110531165798437)  
+    - [掘金文章：相同的树](https://juejin.cn/post/7045108342536011789/)  
+    - [掘金文章：二叉树的右视图](https://juejin.cn/post/7045106362593837087)  
+    - [掘金文章：二叉搜索树中的第K小元素](https://juejin.cn/post/7045102586965262366)  
+    - [掘金文章：合法二叉搜索树](https://juejin.cn/post/7045096000821657637)  
   - 2021.12.23
     - [B站视频：罗马数字转整数](https://www.bilibili.com/video/BV1Ea41167iL/)  
     - [B站视频：插入搜索位置](https://www.bilibili.com/video/BV1744y177Ek/)  
