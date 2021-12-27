@@ -4,7 +4,7 @@
   "description": "> 学习打卡记录",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"hello world\"",
+    "test": "jest",
     "dev:comment": "启动开发环境",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "eslint:comment": "使用 ESLint 检查并自动修复 src 目录下所有扩展名为 .ts 的文件",
@@ -31,15 +31,25 @@
   },
   "homepage": "https://github.com/BambooSword/BambooSword-FE-studybook#readme",
   "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
+    "@types/inquirer": "^8.1.3",
+    "@types/jest": "^27.0.3",
     "@types/node": "^16.11.12",
     "@types/shelljs": "^0.8.9",
     "@typescript-eslint/eslint-plugin": "^5.7.0",
     "@typescript-eslint/parser": "^5.7.0",
+    "babel-jest": "^27.4.5",
+    "chalk": "^5.0.0",
+    "commander": "^8.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.4.1",
     "husky": "^7.0.0",
+    "inquirer": "^8.2.0",
+    "jest": "^27.4.5",
     "prettier": "^2.5.1",
     "ts-node": "^10.4.0",
     "ts-node-dev": "^1.1.8",
@@ -53,10 +63,5 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "dependencies": {
-    "@types/inquirer": "^8.1.3",
-    "chalk": "^5.0.0",
-    "commander": "^8.3.0",
-    "inquirer": "^8.2.0"
-  }
+  "dependencies": {}
 }
