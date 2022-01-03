@@ -5,6 +5,10 @@
 ## 日志
 
 - 学习内容
+  - 2022.01.02
+    - [B站视频: 从尾到头打印链表](https://www.bilibili.com/video/BV1bR4y137yr/)
+    - [掘金文章：最接近原点的 K 个点](https://juejin.cn/post/7048554458694811685)  
+    - [掘金文章：前K个高频词汇](https://juejin.cn/post/7048466177751777287)  
   - 2021.12.31
     - [B站视频: 反转字符串](https://www.bilibili.com/video/BV17Y411a79F/)
     - [掘金文章：二叉树中的最大路径和](https://juejin.cn/post/7047806344904048671)  
