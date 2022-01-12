@@ -5,6 +5,9 @@
 ## 日志
 
 - 学习内容
+  - 2022.01.12
+    - [B站视频:返回倒数第K个节点](https://www.bilibili.com/video/BV1wq4y1A7CF/)
+    - [B站视频:环形链表](https://www.bilibili.com/video/BV1d3411e7Vw/)
   - 2022.01.07
     - [掘金文章：省份的数量](https://juejin.cn/post/7050101467700527118)  
     - [掘金文章：岛屿数量](https://juejin.cn/post/7050427120824090655)  
