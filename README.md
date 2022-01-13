@@ -5,6 +5,9 @@
 ## 日志
 
 - 学习内容
+  - 2022.01.13
+    - [掘金文章:合并K个升序链表](https://juejin.cn/post/7052470390374793246/)
+    - [掘金文章:子数组和排序后的区间和](https://juejin.cn/post/7052482000317317127)
   - 2022.01.12
     - [B站视频:返回倒数第K个节点](https://www.bilibili.com/video/BV1wq4y1A7CF/)
     - [B站视频:环形链表](https://www.bilibili.com/video/BV1d3411e7Vw/)
