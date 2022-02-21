@@ -12,4 +12,6 @@ parserOptions:
   sourceType: module
 plugins:
   - '@typescript-eslint'
-rules: {}
+rules: 
+  {'no-var-requires': false}
+
