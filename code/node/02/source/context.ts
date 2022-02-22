@@ -1,32 +1,38 @@
-import http from 'http';
-interface Response extends http.ServerResponse {
+import { IncomingMessage, ServerResponse } from 'http';
+interface Response extends ServerResponse {
   body: any;
 }
-interface Request extends http.IncomingMessage {
+interface Request extends IncomingMessage {
   body: string;
 }
 
-interface Context {
-  request: Request;
-  response: Response;
+export interface Context extends BaseContext {
+  request?: Request;
+  response?: Response;
+  req?: IncomingMessage;
+  res?: ServerResponse;
+}
+export interface BaseContext {
   readonly url: string | undefined;
   body: string;
   method: string | undefined;
 }
 const context: Context = {
   get url() {
-    return this.request.url;
+    return this?.request?.url;
   },
   get body() {
-    return this.response.body;
+    return this?.response?.body;
   },
   set body(val: string) {
-    this.response.body = val;
+    if (this?.response?.body) {
+      this.response.body = val;
+    }
   },
   get method() {
-    return this.request.method;
+    return this?.request?.method;
   },
-	request
+  
 };
 
 export default context;

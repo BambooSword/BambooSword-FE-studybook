@@ -1,9 +1,9 @@
 import http from 'http';
-import context from './context';
+import context, { Context } from './context';
 import request from './request';
 import response from './response';
 
-type callback = (ctx: object) => void;
+type callback = (ctx: Context) => void;
 
 class Koa {
   callback: callback;
@@ -15,6 +15,7 @@ class Koa {
     const server = http.createServer((req, res) => {
       // this.callback(req, res);
       const ctx = this.createContext(req, res);
+      console.log(ctx)
       this.callback(ctx);
       res.end(ctx.body);
     });
