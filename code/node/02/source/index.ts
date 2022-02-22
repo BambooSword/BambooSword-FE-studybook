@@ -3,7 +3,18 @@ import { Context } from './context';
 
 const app = new Koa();
 
-app.use(({ req, res }: Context) => {
+app.use(async ({ req, res }: Context, next) => {
+  console.log(1);
+  await next();
+  console.log(5);
+});
+app.use(async ({ req, res }: Context, next) => {
+  console.log(2);
+  await next();
+  console.log(4);
+});
+app.use(({ req, res }: Context, next) => {
+  console.log(3);
   res?.end('Hello Koa!!!');
 });
 
