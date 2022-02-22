@@ -1,7 +1,7 @@
-const http = require('http');
-// import http from 'http 如何解决这个问题
-
-const fs = require('fs');
+// const http = require('http');
+import http from 'http' // 如何解决这个问题
+import fs from 'fs'
+// const fs = require('fs');
 
 http
   .createServer((req, res) => {
@@ -26,7 +26,7 @@ http
     } else if (url === '/users' && method === 'GET') {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ name: 'Bamboo', age: 30 }));
-    } else if (method === 'GET' && headers.accept.indexOf('image/*')) {
+    } else if (method === 'GET' && headers.accept?.indexOf('image/*')) {
       // 所有图片
       fs.createReadStream('.' + url).pipe(res);
     } else {
