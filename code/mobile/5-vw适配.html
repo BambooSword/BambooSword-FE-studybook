@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- vw + media -->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		// 像素比： 1像素内容放大到n倍
+		console.log(window.devicePixelRatio);
+
+		(function () {
+			var metaEl = document.createElement('meta');
+			var scale = window.devicePixelRatio;
+			metaEl.setAttribute('name', 'viewport');
+			metaEl.setAttribute('content', 'initial-scale=' + (1 / scale) + ', maximum-scale=' + (1 / scale) + ', minimum-scale=' + (1 / scale) + ', user-scalable=no');
+			document.documentElement.firstElementChild.appendChild(metaEl)
+		})();
+
+	</script>
+	<script>
+	</script>
+	<style>
+
+		body {
+			margin: 0;
+		}
+
+		div {
+			float: left;
+			border: 0;
+			margin: 0;
+		}
+
+		#box1 {
+			width: 30vw;
+			height: 30vw;
+			background-color: red;
+			font-size: 2vw;
+			;
+		}
+
+		#box2 {
+			width: 30vw;
+			height: 30vw;
+			background-color: yellow;
+			;
+		}
+
+		#box3 {
+			width: 25vw;
+			height: 25vw;
+			background-color: green;
+			;
+		}
+
+		#box4 {
+			width: 15vw;
+			height: 15vw;
+			background-color: pink;
+			;
+		}
+		@media all and (min-width: 640px) {
+			#box1{
+				font-size: 40px;
+				background-color: purple;
+			}
+		}
+	</style>
+</head>
+<!-- 
+	设计稿图纸 1080 ->分成10份， 每份 108
+	324 * 324
+	324 * 324
+	270 * 270
+	162 * 162
+ -->
+
+<body>
+	<div id="box1">hello </div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	<div id="box4"></div>
+</body>
+
+</html>

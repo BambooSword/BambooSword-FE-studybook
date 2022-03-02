@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- <meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=0.5, user-scalable=no"> -->
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		#box {
+			overflow: hidden;
+		}
+
+		#box div {
+			float: left;
+			width: 50%;
+			height: 100px;
+			color: #fff;
+			/* set the font size to 40px and the line height to 100px, set the font family to 宋体 */
+			font: 100%/200% "宋体";
+			text-align: center;
+		}
+
+		#box div:nth-child(1) {
+			background-color: red;
+		}
+
+		#box div:nth-child(2) {
+			background-color: blue;
+		}
+	</style>
+	<script>
+		// 像素比： 1像素内容放大到n倍
+		console.log(window.devicePixelRatio);
+
+		(function () {
+			var metaEl = document.createElement('meta');
+			var scale = window.devicePixelRatio;
+			metaEl.setAttribute('name', 'viewport');
+			metaEl.setAttribute('content', 'initial-scale=' + (1 / scale) + ', maximum-scale=' + (1 / scale) + ', minimum-scale=' + (1 / scale) + ', user-scalable=no');
+			document.documentElement.firstElementChild.appendChild(metaEl)
+		})();
+
+	</script>
+</head>
+
+<body>
+	<div id="box">
+		<div></div>
+		<div></div>
+	</div>
+
+</body>
+
+</html>

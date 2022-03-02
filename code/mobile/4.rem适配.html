@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- rem + viewport -->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script>
+		// 像素比： 1像素内容放大到n倍
+		console.log(window.devicePixelRatio);
+
+		(function () {
+			var metaEl = document.createElement('meta');
+			var scale = window.devicePixelRatio;
+			metaEl.setAttribute('name', 'viewport');
+			metaEl.setAttribute('content', 'initial-scale=' + (1 / scale) + ', maximum-scale=' + (1 / scale) + ', minimum-scale=' + (1 / scale) + ', user-scalable=no');
+			document.documentElement.firstElementChild.appendChild(metaEl)
+		})();
+
+	</script>
+	<script>
+		{
+			let h = document.documentElement;
+			h.style.fontSize = window.innerWidth / 10 + 'px' // html 的 font-size 设为屏幕尺寸的1/10
+			window.onresize = () => {
+				let h = document.documentElement;
+				h.style.fontSize = window.innerWidth / 10 + 'px'
+			}
+		}
+	</script>
+	<style>
+		html {
+			font-size: 108px;
+		}
+
+		body {
+			margin: 0;
+		}
+
+		div {
+			float: left;
+			border: 0;
+			margin: 0;
+		}
+
+		#box1 {
+			width: 3rem;
+			height: 3rem;
+			background-color: red;
+			;
+		}
+
+		#box2 {
+			width: 3rem;
+			height: 3rem;
+			background-color: yellow;
+			;
+		}
+
+		#box3 {
+			width: 2.5rem;
+			height: 2.5rem;
+			background-color: green;
+			;
+		}
+
+		#box4 {
+			width: 1.5rem;
+			height: 1.5rem;
+			background-color: pink;
+			;
+		}
+	</style>
+</head>
+<!-- 
+	设计稿图纸 1080 ->分成10份， 每份 108
+	324 * 324
+	324 * 324
+	270 * 270
+	162 * 162
+ -->
+
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<div id="box3"></div>
+	<div id="box4"></div>
+</body>
+
+</html>
